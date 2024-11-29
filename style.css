@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle, #001d3d, #000814);
+  font-family: "Arial", sans-serif;
+  color: white;
+}
+
+/* Animasi bintang */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url("night.jpg") repeat;
+  background-size: cover;
+  animation: moveStars 60s linear infinite;
+  z-index: -1;
+}
+
+/* Animasi gerak bintang */
+/* @keyframes moveStars {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-50vw, -50vh);
+  }
+} */
+
+/* Center text styling */
+.container {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-wrapper {
+  font-size: clamp(1.7rem, 5vw, 5rem);
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 0 0 5px #ff0080, 0 0 10px #ff0080, 0 0 20px #ff0080, 0 0 30px #ff0080;
+}
+
+/* Text animation */
+.animated-text {
+  display: inline-block;
+  animation: fadeLoop 3s infinite;
+}
+
+/* Animating text fade */
+@keyframes fadeLoop {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
